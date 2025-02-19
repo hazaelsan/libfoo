@@ -1,0 +1,22 @@
+load("@gazelle//:def.bzl", "gazelle")
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+package(default_visibility = ["//visibility:public"])
+
+# gazelle:prefix github.com/hazaelsan/libfoo
+# gazelle:proto package
+# gazelle:proto_group go_package
+gazelle(name = "gazelle")
+
+go_library(
+    name = "libfoo",
+    srcs = ["libfoo.go"],
+    importpath = "github.com/hazaelsan/libfoo",
+    deps = ["//proto/v1:foo_go_proto"],
+)
+
+go_test(
+    name = "libfoo_test",
+    srcs = ["libfoo_test.go"],
+    embed = [":libfoo"],
+)

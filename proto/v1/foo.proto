@@ -1,0 +1,11 @@
+// A dummy proto for testing bazel.
+
+syntax = "proto3";
+
+package hazaelsan.foo.v1;
+
+option go_package = "github.com/hazaelsan/libfoo/proto/v1/foo";
+
+message Foo {
+  string bar = 1;
+}
