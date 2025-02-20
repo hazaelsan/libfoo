@@ -1,0 +1,8 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "foo",
+    srcs = ["empty.go"],
+    importpath = "github.com/hazaelsan/libfoo/proto/v1/foo",
+    visibility = ["//visibility:public"],
+)

@@ -6,6 +6,8 @@ package(default_visibility = ["//visibility:public"])
 # gazelle:prefix github.com/hazaelsan/libfoo
 # gazelle:proto package
 # gazelle:proto_group go_package
+# gazelle:exclude empty.go
+# gazelle:resolve go github.com/hazaelsan/libfoo/proto/v1/foo //proto/v1:foo_go_proto
 gazelle(name = "gazelle")
 
 go_library(
