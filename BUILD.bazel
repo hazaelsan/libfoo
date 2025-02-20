@@ -21,3 +21,13 @@ go_test(
     srcs = ["libfoo_test.go"],
     embed = [":libfoo"],
 )
+
+filegroup(
+    name = "all_files",
+    srcs = [
+        "BUILD.bazel",
+        "MODULE.bazel",
+        "go.mod",
+        "go.sum",
+    ],
+)
